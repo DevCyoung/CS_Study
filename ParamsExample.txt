@@ -1,0 +1,33 @@
+using System;
+class ParTest
+{
+
+    private int[] List = new int[10];
+    public int this[int index] { get { return List[index]; } set { List[index] = value; } }
+
+
+
+    public void ParLoad(params int[] List)
+    {
+        for (int i = 0; i < List.Length; i++)
+        {
+            Console.WriteLine(List[i]);
+        }
+    }
+
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+        ParTest parTest = new ParTest();
+        parTest[1] = 10;
+        parTest[2] = 10;
+
+
+
+    }
+
+}
