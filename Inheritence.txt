@@ -1,0 +1,68 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+class Charactor
+{
+    protected string Name = string.Empty;
+    protected int HP;
+    protected int AT;
+
+    public virtual int AllATItem { get => AT; }
+
+    public void Attack(Charactor charactor)
+    {
+        charactor.HP -= this.AllATItem;
+        Console.WriteLine($"{this.Name} (이)가 {charactor.Name} 을 {this.AllATItem} 의 데미지로 공격하였습니다.");
+        Console.WriteLine($"{charactor.Name} 의 남은 체력은 {charactor.HP}");
+    }
+
+}
+class Player : Charactor
+{
+    int SworldItem = 3;
+
+    public override int AllATItem { get => SworldItem + AT; }
+
+    
+    public Player(string Name)
+    {
+        HP = 100;
+        AT = 10;
+        this.Name = Name;
+    }
+
+}
+class Monster : Charactor
+{
+    public Monster(string Name)
+    {
+        HP = 10;
+        AT = 5;
+        this.Name = Name;
+    }
+
+}
+
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Player player = new Player("도적");
+        Monster monster = new Monster("주황버섯");
+
+            player.Attack(monster);
+
+        Dictionary<string,string> hashSet = new Dictionary<string,string> ()
+        {
+            
+        };
+
+        hashSet.Add("some ", "KEy");
+
+
+    }
+}
+
