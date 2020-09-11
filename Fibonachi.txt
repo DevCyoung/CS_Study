@@ -1,0 +1,51 @@
+using System;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Fibonacci
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            Fibonacci(10);
+        }
+
+        private static void Fibonacci(int num)
+        {
+
+
+            if (num <= 1)
+            {
+                Console.WriteLine("Fibonacci's Length is too small");
+                return;
+            }
+
+            int FibonacciLength = num;
+            int[] FibonacciList = new int[FibonacciLength + 1];
+            FibonacciList[0] = 0;
+            FibonacciList[1] = 1;
+            
+            for (int i = 2; i <= FibonacciLength; i++)
+            {
+                FibonacciList[i] = FibonacciList[i - 2] + FibonacciList[i - 1];
+            }
+
+            //for (int i = 0; i <= FibonacciLength; i++)
+            //{
+            //    Console.WriteLine(FibonacciList[i] + ",");
+            //}
+
+            Console.WriteLine(FibonacciList[FibonacciLength]);
+           
+
+
+
+
+        }
+
+
+    }
+
+
+}
