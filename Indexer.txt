@@ -1,0 +1,69 @@
+using System;
+
+namespace Indexer
+{
+    class Indexer<T> where T : struct
+    {
+        private T[] List_Some;
+
+        public Indexer(int Length)
+        {
+            List_Some = new T[Length];
+        }
+
+        public T this[int Index]
+        {
+            get => List_Some[Index];
+            set => List_Some[Index] = value;
+        }
+    }
+    class Test
+    {
+        private int Some = 0;
+
+        private string Some_String = "Null";
+
+        public int Pro
+        {
+            get => Some;
+            set => Some = value;
+        }
+        public string Pro_string
+        {
+            get => Some_String;
+            set => Some_String = value;
+
+        }
+        private void ClassMethod()
+        {
+            Console.WriteLine("클래스가 생성되었다.");
+        }
+        public void ExceptionTest(int num)
+        {
+            if (num > 0)
+                Console.WriteLine("true");
+            else
+                throw new Exception("Null of Eexcption");
+
+        }
+
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Test test = new Test();
+            try
+            {
+                test.ExceptionTest(-1);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e +" 해결");
+            }
+        }
+    }
+}
