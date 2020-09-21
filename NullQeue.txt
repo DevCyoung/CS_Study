@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+
+namespace NullQue
+{
+     class Meow
+    {
+
+
+    }
+
+     class Cat : Meow
+    {
+        private string Name;
+        private string Color;
+
+        public Cat(string Name , string Color)
+        {
+            this.Name = Name;
+            this.Color = Color;
+            Console.WriteLine($"안녕 {this.Name} 아! ");
+        }
+
+       
+
+
+    }
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat a = null;
+            Console.WriteLine(a as Meow);
+
+          
+           
+           
+        }
+
+        public static void ParamsTest(params int[] list)
+        {
+            int result = 0;
+            for (int i = 0; i < list.Length; i++)
+            {
+                result += list[i];
+            }
+            Console.WriteLine("result : " + result);
+        }
+        public static void MungTest(string name , int Level , float HP)
+        {
+
+        }
+
+    }
+}
